@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- singleton 作用域：
+        如果作用域设置为 singleton，那么 Spring IoC 容器刚好创建一个由该 bean 定义的对象的实例。
+        该单一实例将存储在这种单例 bean 的高速缓存中，以及针对该 bean 的所有后续的请求和引用都返回缓存对象。
+        默认作用域是始终是 singleton，但是当仅仅需要 bean 的一个实例时，你可以在 bean 的配置文件中设置作
+        用域的属性为 singleton -->
+
+    <bean id="helloWorld" class="com.tutorialspoint.HelloWorld" init-method="init" destroy-method="destroy" >
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+    <bean id="helloWorldsingleton" class="com.tutorialspoint.HelloWorldSingleton" scope="singleton">
+    </bean>
+
+    <bean id="helloWorldprototype" class="com.tutorialspoint.HelloWorldPrototype" scope="prototype">
+    </bean>
+</beans>
