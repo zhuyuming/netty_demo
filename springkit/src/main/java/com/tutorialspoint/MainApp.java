@@ -72,6 +72,24 @@ public class MainApp {
         TextEditor1 te1 = (TextEditor1) context.getBean("textEditor1");
         te1.spellCheck();
 
+        //注入集合
+        JavaCollection jc=(JavaCollection)context.getBean("javaCollection");
+        jc.getAddressList();
+        jc.getAddressSet();
+        jc.getAddressMap();
+        jc.getAddressProp();
+
+        //bean自动装配byname
+        TextEditor2 te2 = (TextEditor2) context.getBean("textEditor2");
+        te2.spellCheck();
+
+        //bean自动装配bytype
+        TextEditor3 te3 = (TextEditor3) context.getBean("textEditor3");
+        te3.spellCheck();
+
+        //bean自动装配 构造函数
+        TextEditor4 te4 = (TextEditor4) context.getBean("textEditor4");
+        te4.spellCheck();
 
         //Bean生命周期2.
         context.registerShutdownHook();

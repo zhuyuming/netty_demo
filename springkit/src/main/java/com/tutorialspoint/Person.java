@@ -13,4 +13,8 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void showName(){
+        System.out.println("Person:"+this.name);
+    }
 }
