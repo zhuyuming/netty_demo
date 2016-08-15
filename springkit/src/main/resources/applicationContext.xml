@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- singleton 作用域：
@@ -18,4 +18,81 @@
 
     <bean id="helloWorldprototype" class="com.tutorialspoint.HelloWorldPrototype" scope="prototype">
     </bean>
+
+    <!-- 继承关系 -->
+    <bean id="helloWorldparent" class="com.tutorialspoint.HelloWorldParent">
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+    </bean>
+
+    <bean id="helloIndia" class="com.tutorialspoint.HelloIndia" parent="helloWorldparent">
+        <property name="message1" value="Hello India!"/>
+        <property name="message2" value="message2 India!"/>
+        <property name="message3" value="Namaste India!"/>
+    </bean>
+
+    <!--基于构造函数的依赖注入-->
+    <!-- Definition for textEditor bean -->
+    <bean id="textEditor" class="com.tutorialspoint.TextEditor">
+        <constructor-arg ref="spellChecker"/>
+    </bean>
+    <!-- Definition for spellChecker bean -->
+    <bean id="spellChecker" class="com.tutorialspoint.SpellChecker">
+    </bean>
+    <!-- 基于构造函数的依赖注入 构造函数多个参数 -->
+    <bean id="foo" class="com.tutorialspoint.Foo">
+        <constructor-arg type="int" value="2001"/>
+        <constructor-arg type="java.lang.String" value="Zara"/>
+    </bean>
+    <!--
+    <bean id="exampleBean" class="examples.ExampleBean">
+      <constructor-arg index="0" value="2001"/>
+      <constructor-arg index="1" value="Zara"/>
+   </bean>
+    -->
+
+    <!-- 抽象类Bean模板
+     <bean id="beanTeamplate" abstract="true">
+          <property name="message1" value="Hello World!"/>
+          <property name="message2" value="Hello Second World!"/>
+          <property name="message3" value="Namaste India!"/>
+       </bean>
+
+       <bean id="helloIndia" class="com.tutorialspoint.HelloIndia" parent="beanTeamplate">
+          <property name="message1" value="Hello India!"/>
+          <property name="message3" value="Namaste India!"/>
+       </bean>
+     -->
+
+
+    <!--Spring 基于设值函数的依赖注入-->
+    <!-- 如果你要把一个引用传递给一个对象，那么你需要使用 标签的 ref 属性，而如果你要直接传递一个值，那么你应该使用 value 属性。 -->
+    <!--
+    <bean id="user" class="com.tutorialspoint.User">
+        <property name="name" value="Zhao" />
+        <property name="age" value="22" />
+        <property name="country" ref="jane" />
+    </bean>
+    <bean name="jane" class="com.tutorialspoint.Person">
+        <property name="name" value="John Doe"/>
+    </bean>
+    -->
+    <!--简写-->
+    <bean id="user" class="com.tutorialspoint.User" p:name="Zhao" p:age="22" p:country-ref="jane">
+    </bean>
+    <bean name="jane" class="com.tutorialspoint.Person" p:name="John Doe">
+    </bean>
+
+    <!-- 内部 bean 为基于 setter 注入 -->
+    <!-- Definition for textEditor bean using inner bean -->
+    <bean id="textEditor1" class="com.tutorialspoint.TextEditor1">
+        <property name="spellChecker">
+            <bean id="spellChecker" class="com.tutorialspoint.SpellChecker"/>
+        </property>
+    </bean>
+
+
+
+    <!-- 前置与后置运行 -->
+    <bean class="com.tutorialspoint.InitHelloWorld" />
 </beans>

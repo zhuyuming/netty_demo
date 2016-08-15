@@ -49,6 +49,30 @@ public class MainApp {
         objD.setMessage("I'm object D");
         objD.getMessage();
 
+        //继承关系
+        HelloWorldParent objE = (HelloWorldParent) context.getBean("helloWorldparent");
+        objE.getMessage1();
+        objE.getMessage2();
+        HelloIndia objF = (HelloIndia) context.getBean("helloIndia");
+        objF.getMessage1();
+        objF.getMessage2();
+        objF.getMessage3();
+
+        //Spring 基于构造函数的依赖注入
+        TextEditor te = (TextEditor) context.getBean("textEditor");
+        te.spellCheck();
+        Foo foo=(Foo) context.getBean("foo");
+        foo.getAll();
+
+        //Spring 基于设值函数的依赖注入
+        User user = (User)context.getBean("user") ;
+        System.out.println(user) ;
+
+        //内部 bean 为基于 setter 注入
+        TextEditor1 te1 = (TextEditor1) context.getBean("textEditor1");
+        te1.spellCheck();
+
+
         //Bean生命周期2.
         context.registerShutdownHook();
     }
