@@ -1,4 +1,4 @@
-package com.cn.hnust.domain;
+package com.cn.hnust.pojo;
 
 public class User {
     private Integer id;

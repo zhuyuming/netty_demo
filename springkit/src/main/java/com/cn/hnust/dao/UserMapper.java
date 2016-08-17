@@ -1,6 +1,6 @@
 package com.cn.hnust.dao;
 
-import com.cn.hnust.domain.User;
+import com.cn.hnust.pojo.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
