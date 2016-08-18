@@ -242,6 +242,7 @@
   <build>
     <finalName>springkit</finalName>
     <!-- mybatis-generator 使用时关闭 -->
+
     <resources>
       <resource>
         <directory>src/main/java</directory>
@@ -252,6 +253,7 @@
         <filtering>false</filtering>
       </resource>
     </resources>
+
     <plugins>
       <plugin>
         <groupId>org.mybatis.generator</groupId>

@@ -1,33 +1,45 @@
 package com.mybatis.pojo;
 
+import java.util.Date;
+
 public class User {
-    private Integer id;
+    private String userId;
 
-    private String username;
+    private String userName;
 
-    private String password;
+    private Date userBirthday;
 
-    public Integer getId() {
-        return id;
+    private Double userSalary;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getPassword() {
-        return password;
+    public Date getUserBirthday() {
+        return userBirthday;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
+    }
+
+    public Double getUserSalary() {
+        return userSalary;
+    }
+
+    public void setUserSalary(Double userSalary) {
+        this.userSalary = userSalary;
     }
 }
