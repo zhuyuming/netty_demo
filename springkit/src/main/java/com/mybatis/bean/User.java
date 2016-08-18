@@ -1,13 +1,11 @@
-package com.cn.hnust.pojo;
+package com.mybatis.bean;
 
 public class User {
     private Integer id;
 
-    private String userName;
+    private String name;
 
     private String password;
-
-    private Integer age;
 
     public Integer getId() {
         return id;
@@ -17,12 +15,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public String getPassword() {
@@ -31,13 +29,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 }
