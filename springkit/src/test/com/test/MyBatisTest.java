@@ -17,11 +17,11 @@ public class MyBatisTest {
 
     @Test
     public void testAddUser(){
-        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"applicationContextForMybatis.xml","mybatisdemoconf.xml"});
+        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"applicationContextForMybatis.xml"});
         UserServiceI userService = (UserServiceI) ac.getBean("userService");
         User user = new User();
         user.setUserId(UUID.randomUUID().toString().replaceAll("-", ""));
-        user.setUserName("白虎神皇xdp");
+        user.setUserName("地方规划局快乐");
         user.setUserBirthday(new Date());
         user.setUserSalary(10000D);
         userService.addUser(user);
