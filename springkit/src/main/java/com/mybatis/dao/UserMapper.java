@@ -1,6 +1,6 @@
 package com.mybatis.dao;
 
-import com.mybatis.pojo.User;
+import com.mybatis.domain.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(String userId);

@@ -1,17 +1,15 @@
-package com.mybatis.service.impl;
+package com.mybatis.service;
 
 import com.mybatis.dao.UserMapper;
-import com.mybatis.pojo.User;
-import com.mybatis.service.IUserService;
+import com.mybatis.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by amanda on 18/08/16.
+ * Created by zhuyuming on 16/8/22.
  */
-
 @Service("userService")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserServiceI{
 
     /**
      * 使用@Autowired注解标注userMapper变量，
@@ -19,6 +17,8 @@ public class UserServiceImpl implements IUserService {
      */
     @Autowired
     private UserMapper userMapper;//注入dao
+
+
     public void addUser(User user) {
         userMapper.insert(user);
     }

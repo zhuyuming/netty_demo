@@ -1,4 +1,4 @@
-package com.mybatis.pojo;
+package com.mybatis.domain;
 
 import java.util.Date;
 
@@ -10,6 +10,17 @@ public class User {
     private Date userBirthday;
 
     private Double userSalary;
+
+    public User(String userId, String userName, Date userBirthday, Double userSalary) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userBirthday = userBirthday;
+        this.userSalary = userSalary;
+    }
+
+    public User() {
+        super();
+    }
 
     public String getUserId() {
         return userId;

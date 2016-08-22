@@ -1,11 +1,11 @@
 package com.mybatis.service;
 
-import com.mybatis.pojo.User;
+import com.mybatis.domain.User;
 
 /**
- * Created by amanda on 18/08/16.
+ * Created by zhuyuming on 16/8/22.
  */
-public interface IUserService {
+public interface UserServiceI {
     /**
      * 添加用户
      * @param user
